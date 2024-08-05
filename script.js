@@ -65,6 +65,30 @@ return Math.max(nums[nums.length-1], nums[nums.length-2]);
 
 
 
-     
-
 };
+
+// Group Anagrams problem 
+//0(NW) Time Complexity
+const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+
+
+function groupAnagrams (strs) {
+
+    let cache = {}; // object that stores keys that groups words together
+
+    for(let str of strs) { 
+        let Key = str.split('').reduce((total, char) => total * primes[char.charCodeAt()-97], 1); // Key = aet
+        (!cache[Key]) ? cache[Key] = [str] : cache[Key].push(str);
+
+
+    }
+
+    return Object.values(cache);
+
+// what can we do to make eat === tea?
+// 2*4*6 === 6*2*4 is same as so can turn letters of word into a number
+// can use prime numbers
+};
+
+'a'.charCodeAt() -97 //97
+'b'.charCodeAt() -97//98
