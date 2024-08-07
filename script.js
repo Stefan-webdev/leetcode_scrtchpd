@@ -12,7 +12,7 @@
 };
 console.log(lengthOfLastWord("last word"));
 
-*/ 
+
 
 let books = [`Happy Book`, `Sad Book`, `Jipper Book`, `Miera Book`];
 
@@ -69,12 +69,13 @@ return Math.max(nums[nums.length-1], nums[nums.length-2]);
 
 // Group Anagrams problem 
 //0(NW) Time Complexity
-const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+
 
 
 function groupAnagrams (strs) {
 
     let cache = {}; // object that stores keys that groups words together
+    const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
 
     for(let str of strs) { 
         let Key = str.split('').reduce((total, char) => total * primes[char.charCodeAt()-97], 1); // Key = aet
@@ -92,3 +93,17 @@ function groupAnagrams (strs) {
 
 'a'.charCodeAt() -97 //97
 'b'.charCodeAt() -97//98
+*/ 
+    const countUp = (num) => {
+        console.log(num)
+
+        // minus num by 1
+        const updatedNum = num + 1;
+    
+
+    if(updatedNum < 101) {
+        countUp(updatedNum)
+    
+    }
+    }
+    countUp(0);
